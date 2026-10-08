@@ -1,0 +1,7 @@
+.DS_Store
+node_modules/
+dist/
+note1.md
+tests/README.md
+public/
+deploy-instructions.md

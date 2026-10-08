@@ -1,0 +1,8 @@
+{
+  "name": "fizzbuzz-terminal",
+  "compatibility_date": "2026-01-01",
+  "assets": {
+    "directory": "./public",
+    "not_found_handling": "404-page"
+  }
+}
