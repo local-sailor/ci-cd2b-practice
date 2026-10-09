@@ -51,8 +51,9 @@ Cloudflare serves `index.html` at `/` and shows `404.html` for missing pages.
 
 ```
 src/
-  index.html     the page (black background, white text)
-  404.html       shown for pages that don't exist
+  index.html     the page
+  styles.css     the page's stylesheet (black background, white text)
+  404.html       shown for pages that don't exist (its CSS is inline on purpose, see the comment in the file)
   main.ts        terminal behavior: input, output, Run button
   fizzbuzz.ts    the FizzBuzz logic, no browser code
 dist/            compiled JavaScript (generated, git-ignored)

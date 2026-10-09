@@ -17,8 +17,14 @@ beforeAll(() => {
 });
 
 describe("public/ folder", () => {
-  it("contains the page, the 404 page and the scripts", () => {
-    for (const name of ["index.html", "404.html", "main.js", "fizzbuzz.js"]) {
+  it("contains the page, its stylesheet, the 404 page and the scripts", () => {
+    for (const name of [
+      "index.html",
+      "styles.css",
+      "404.html",
+      "main.js",
+      "fizzbuzz.js",
+    ]) {
       expect(existsSync(inPublic(name)), `${name} is missing`).toBe(true);
     }
   });
@@ -27,6 +33,7 @@ describe("public/ folder", () => {
     const page = readFileSync(inPublic("index.html"), "utf8");
 
     expect(page).toContain('src="./main.js"');
+    expect(page).toContain('href="./styles.css"');
     expect(page).not.toContain("dist/");
   });
 });

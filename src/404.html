@@ -4,6 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>404 - Page not found</title>
+  <!-- The CSS is inline on purpose: this page is served at any missing URL,
+       including nested ones like /a/b/c, where a relative stylesheet link would break. -->
   <style>
     html, body {
       height: 100%;

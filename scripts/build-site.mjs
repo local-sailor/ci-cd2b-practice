@@ -3,6 +3,7 @@
 // one folder as the whole website, so this gathers everything into one place:
 //
 //   public/index.html   the page, pointing at ./main.js
+//   public/styles.css  the page's stylesheet
 //   public/404.html     shown for any page that doesn't exist
 //   public/main.js      compiled from src/main.ts
 //   public/fizzbuzz.js  compiled from src/fizzbuzz.ts
@@ -43,6 +44,7 @@ await writeFile(
   page.replace(DEV_SCRIPT_PATH, PUBLIC_SCRIPT_PATH),
 );
 
+await copyFile(join(SRC, "styles.css"), join(PUBLIC, "styles.css"));
 await copyFile(join(SRC, "404.html"), join(PUBLIC, "404.html"));
 
 const scripts = (await readdir(DIST)).filter((name) => name.endsWith(".js"));
@@ -54,5 +56,5 @@ for (const name of scripts) {
 }
 
 console.log(
-  `Built public/ (${["index.html", "404.html", ...scripts].join(", ")})`,
+  `Built public/ (${["index.html", "styles.css", "404.html", ...scripts].join(", ")})`,
 );
